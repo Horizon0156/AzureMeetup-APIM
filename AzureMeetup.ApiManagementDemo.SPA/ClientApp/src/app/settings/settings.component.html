@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Settings</h1>
+<div mat-dialog-content>
+  <mat-form-field class="w-100">
+    <input placeholder="Meetup REST API URL"  matInput [(ngModel)]="apiUrl">
+  </mat-form-field>
+  <mat-form-field class="w-100">
+      <input placeholder="API Subscription Key"  matInput [(ngModel)]="subscriptionKey">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <span class="fill-space"></span>
+  <button mat-button (click)="cancel()">Cancel</button>
+  <button mat-button (click)="saveSettings()" cdkFocusInitial>Save</button>
+</div>

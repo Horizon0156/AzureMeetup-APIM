@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+    <span>Azure Ruhrgebiet</span>
+
+    <span class="fill-space"></span>
+  
+    <button *ngIf="!isUserLoggedIn" mat-button (click)="login()">Login</button>
+    <button *ngIf="isUserLoggedIn" mat-button (click)="logout()">Logout</button>
+
+    <button mat-icon-button (click)="triggerReload()">
+        <mat-icon aria-label="Refresh icon">refresh</mat-icon>
+    </button>
+
+  <button mat-icon-button (click)="openSettings()">
+        <mat-icon aria-label="Settings icon">settings</mat-icon>
+    </button>
+</mat-toolbar>
+
+<button *ngIf="isUserLoggedIn" class="create-button" mat-mini-fab (click)="openNewMeetupDialog()" color="primary">
+    <mat-icon aria-label="Plus icon">add</mat-icon>
+</button>

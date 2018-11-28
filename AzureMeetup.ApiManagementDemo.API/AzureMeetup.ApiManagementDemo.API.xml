@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AzureMeetup.ApiManagementDemo.API</name>
+    </assembly>
+    <members>
+        <member name="T:AzureMeetup.ApiManagementDemo.API.Controllers.DemoController">
+            <summary>
+                Demo REST API for testing purpose.
+            </summary>
+        </member>
+        <member name="M:AzureMeetup.ApiManagementDemo.API.Controllers.DemoController.GetCurrentTime">
+            <summary>
+                Gets the current UTC time.
+            </summary>
+            <returns> An action result. </returns>
+        </member>
+        <member name="T:AzureMeetup.ApiManagementDemo.API.Controllers.MeetupController">
+            <summary>
+                REST API Controller for managing Meetups.
+            </summary>
+        </member>
+        <member name="M:AzureMeetup.ApiManagementDemo.API.Controllers.MeetupController.#ctor(MediatR.IMediator)">
+            <summary>
+            Creates a new instance of the Meetup controller.
+            </summary>
+            <param name="mediator"> An instance of a mediator used for command and query dispatching. </param>
+        </member>
+        <member name="M:AzureMeetup.ApiManagementDemo.API.Controllers.MeetupController.GetMeetupsAsync">
+            <summary>
+                Gets a list of announced Meetups.
+            </summary>
+            <returns> An action result. </returns>
+            <response code="200"> Success. The body holds a list of announced Meetups. </response>
+        </member>
+        <member name="M:AzureMeetup.ApiManagementDemo.API.Controllers.MeetupController.CreateMeetupAsync(AzureMeetup.ApiManagementDemo.API.Models.Meetup)">
+            <summary>
+                Annouces a new Meetup.
+            </summary>
+            <param name="meetup"> The meetup which should be announced. </param>
+            <returns> An action result. </returns>
+            <response code="204"> Success. The Meetup was announced successfully. </response>
+            <response code="400"> Bad Request. The given meetup is missing information or malformed. </response>
+            <response code="401"> Unauthorized. Only registered users are allowed to announce a Meetup. </response>
+        </member>
+        <member name="T:AzureMeetup.ApiManagementDemo.API.Models.GeoLocation">
+            <summary>
+                A geographic location.
+            </summary>
+        </member>
+        <member name="M:AzureMeetup.ApiManagementDemo.API.Models.GeoLocation.#ctor(System.Double,System.Double)">
+            <summary>
+                Creates a new geographic location.
+            </summary>
+            <param name="longitude"> The longitude. </param>
+            <param name="latitude"> The latitude. </param>
+        </member>
+        <member name="P:AzureMeetup.ApiManagementDemo.API.Models.GeoLocation.Longitude">
+            <summary>
+                Gets the longitude.
+            </summary>
+        </member>
+        <member name="P:AzureMeetup.ApiManagementDemo.API.Models.GeoLocation.Latitude">
+            <summary>
+                Gets the latitude.
+            </summary>
+        </member>
+        <member name="T:AzureMeetup.ApiManagementDemo.API.Models.Meetup">
+            <summary>
+                This class holds inforamtion about an announced Meetup.
+            </summary>
+        </member>
+        <member name="P:AzureMeetup.ApiManagementDemo.API.Models.Meetup.Id">
+            <summary>
+                Gets or sets the id.
+            </summary>
+        </member>
+        <member name="P:AzureMeetup.ApiManagementDemo.API.Models.Meetup.Title">
+            <summary>
+                Gets or sets the title.
+            </summary>
+        </member>
+        <member name="P:AzureMeetup.ApiManagementDemo.API.Models.Meetup.Description">
+            <summary>
+                Gets or sets the description.
+            </summary>
+        </member>
+        <member name="P:AzureMeetup.ApiManagementDemo.API.Models.Meetup.Date">
+            <summary>
+                Gets or sets the date where the Meetup will take place.
+            </summary>
+        </member>
+        <member name="P:AzureMeetup.ApiManagementDemo.API.Models.Meetup.Speaker">
+            <summary>
+                Gets or sets the name of the speaker.
+            </summary>
+        </member>
+        <member name="P:AzureMeetup.ApiManagementDemo.API.Models.Meetup.Location">
+            <summary>
+                Gets or sets the location of the Meetup.
+            </summary>
+        </member>
+    </members>
+</doc>

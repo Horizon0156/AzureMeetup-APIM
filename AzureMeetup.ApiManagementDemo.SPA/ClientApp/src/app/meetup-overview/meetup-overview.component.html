@@ -1,0 +1,36 @@
+<div class="content-box">
+
+  <mat-spinner class="m-auto" *ngIf="isBusy"></mat-spinner>
+  <div  *ngIf="!isBusy">
+    <h1 class="mat-h1">Upcoming Events <span *ngIf="upcomingMeetups?.length > 0" class="badge" [matBadge]="upcomingMeetups.length"></span></h1>
+    <ng-container *ngIf="upcomingMeetups?.length > 0; else noData">
+      <mat-card *ngFor="let meetup of upcomingMeetups">
+        <mat-card-title>{{meetup.title}}</mat-card-title>
+        <mat-card-subtitle>Speaker: {{meetup.speaker}}</mat-card-subtitle>
+        <mat-card-content>
+          <p>{{meetup.description}}</p>
+          <p class="mat-body-strong">Date: {{meetup.date | date}}</p>
+        </mat-card-content>
+      </mat-card>
+    </ng-container>
+
+    <h1 class="mat-h1 mt-30">Recent Events <span *ngIf="recentMeetups?.length > 0" class="badge" [matBadge]="recentMeetups.length"></span></h1>
+    <ng-container *ngIf="recentMeetups?.length > 0; else noData">
+      <mat-card *ngFor="let meetup of recentMeetups">
+        <mat-card-title>{{meetup.title}}</mat-card-title>
+        <mat-card-subtitle>Speaker: {{meetup.speaker}}</mat-card-subtitle>
+        <mat-card-content>
+          <p>{{meetup.description}}</p>
+          <p class="mat-body-strong">Date: {{meetup.date | date}}</p>
+        </mat-card-content>
+      </mat-card>
+    </ng-container>
+
+
+    <ng-template #noData>
+      <div>
+        No Meetups found
+      </div>
+    </ng-template>
+  </div>
+</div>

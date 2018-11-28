@@ -1,0 +1,41 @@
+{
+  "x-generator": "NSwag v12.0.0.0 (NJsonSchema v9.12.2.0 (Newtonsoft.Json v11.0.0.0))",
+  "swagger": "2.0",
+  "info": {
+    "title": "Demo REST API",
+    "version": "0.1-alpha"
+  },
+  "host": "azure-ruhrgebiet-apimdemo-api.azurewebsites.net",
+  "basePath": "/api/demo",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json-patch+json",
+    "application/json",
+    "text/json",
+    "application/*+json"
+  ],
+  "paths": {
+    "/time": {
+      "get": {
+        "tags": [
+          "Demo"
+        ],
+        "summary": "Get time (UTC)",
+        "description": "Gets the current UTC time.\n            ",
+        "operationId": "Demo_GetCurrentTime",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {}
+}

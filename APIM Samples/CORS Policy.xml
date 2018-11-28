@@ -1,0 +1,34 @@
+<policies>
+    <inbound>
+        <base />
+        <cors>
+            <allowed-origins>
+                <origin>*</origin>
+            </allowed-origins>
+            <allowed-methods>
+                <method>*</method>
+            </allowed-methods>
+            <allowed-headers>
+                <header>*</header>
+            </allowed-headers>
+            <expose-headers>
+                <header>*</header>
+            </expose-headers>
+        </cors>
+    </inbound>
+    <backend>
+        <base />
+    </backend>
+    <outbound>
+        <set-header name="Access-Control-Allow-Origin" exists-action="override">
+            <value>@(context.Request.Headers.GetValueOrDefault("Origin",""))</value>
+        </set-header>
+        <base />
+    </outbound>
+    <on-error>
+        <set-header name="Access-Control-Allow-Origin" exists-action="override">
+            <value>@(context.Request.Headers.GetValueOrDefault("Origin",""))</value>
+        </set-header>
+        <base />
+    </on-error>
+</policies>
